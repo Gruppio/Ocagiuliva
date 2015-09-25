@@ -4,6 +4,29 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+.vid {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.vid iframe,
+.vid object,
+.vid embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper{
+    background: url('/img/background.jpg') no-repeat   center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;}
+
 html,
 body {
     width: 100%;
@@ -132,22 +155,22 @@ aside {
     }
 
     .navbar-default .navbar-header .navbar-brand {
-        color: rgba(255,255,255,.7);
+        color: rgba(0,103,162,.7);
     }
 
     .navbar-default .navbar-header .navbar-brand:hover,
     .navbar-default .navbar-header .navbar-brand:focus {
-        color: #fff;
+        color: rgba(242,139,61,.99);
     }
 
     .navbar-default .nav > li>a,
     .navbar-default .nav>li>a:focus {
-        color: rgba(255,255,255,.7);
+        color: rgba(0,103,162,.7);
     }
 
     .navbar-default .nav > li>a:hover,
     .navbar-default .nav>li>a:focus:hover {
-        color: #fff;
+        color: rgba(242,139,61,.99);
     }
 
     .navbar-default.affix {
