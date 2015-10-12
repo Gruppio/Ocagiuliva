@@ -71,18 +71,25 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#home">Home</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About us</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#carnival">Carnival</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contacts</a>
-                    </li>
+                    <?php
+                        include 'php/localize.php'
+                        
+                        if isItalian()
+                        { 
+                            echo "<li><a class=\"page-scroll\" href=\"#home\">Home</a></li>";
+                            echo "<li><a class=\"page-scroll\" href=\"#about\">La Società</a></li>";
+                            echo "<li><a class=\"page-scroll\" href=\"#carnival\">Carnevale</a></li>";
+                            echo "<li><a class=\"page-scroll\" href=\"#contact\">Contatti</a></li>";
+                        }
+                        else
+                        {
+                            echo "<li><a class=\"page-scroll\" href=\"#home\">Home</a></li>";
+                            echo "<li><a class=\"page-scroll\" href=\"#about\">About us</a></li>";
+                            echo "<li><a class=\"page-scroll\" href=\"#carnival\">Carnival</a></li>";
+                            echo "<li><a class=\"page-scroll\" href=\"#contact\">Contacts</a></li>";
+                        }
+                    ?>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
