@@ -19,6 +19,7 @@ function getClientIp() {
     return $ipaddress;
 }
 
+
 function localize()
 {
     $ip = getClientIp();
@@ -27,7 +28,11 @@ function localize()
 
 function isItalian()
 {
-    return ("IT" == localize())
+    if ("IT" == localize())
+    {
+        return true;
+    }
+    return false;
 }
 
 ?>
