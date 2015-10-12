@@ -50,6 +50,11 @@
   ga('send', 'pageview');
 
 </script>
+    
+    <?php 
+        include_once './php/Localize.php';
+        include_once './php/DescriptionManager.php';
+    ?>
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -72,8 +77,6 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <?php                    
-                        include_once './php/Localize.php';
-
                         if (isItalian())
                         { 
                             echo "<li><a class=\"page-scroll\" href=\"#home\">Home</a></li>";
@@ -98,29 +101,7 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <div class="wrapper">
-    <!--header class="wrapper">
-        
-        <!--div class="header-content">
-            <div class="header-content-inner wrapper">
-                <!--div class="wrapper">
-                    <img src="/img/background.jpg" class="img-responsive" alt="Responsive image">
-                </div>
-                <!--video autoplay loop muted poster="img/background.jpg" id="background">
-                    <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
-                </video-->
-                <!--div class="container">
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <iframe class="col-lg-12 col-md-12 col-sm-12 col-xs-12" src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header-->
-    
-    
+    <div class="wrapper">    
     <section id="home" class="no-padding" style="padding-top:100px">
         <div class="container">
             <div class="col-lg-12">
@@ -130,7 +111,7 @@
                 <img src="img/Ocagiuliva.png" class="img-responsive center-block" style="padding: 25px 0px 80px 0px">
                 <div class="embed-responsive embed-responsive-16by9">
                     <!--iframe class="embed-responsive-item" src="./Ocagiuliva.m4v" frameborder="0"></iframe-->
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9-d08TXTkyA?autoplay=0&controls=1&showinfo=0&loop=1&rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9-d08TXTkyA?autoplay=0&controls=1&showinfo=0&loop=1&rel=0&modestbranding=1" frameborder="0" allowfullscreen>    </iframe>
                 
                 </div>
                 <!--div class="embed-responsive embed-responsive-16by9">
@@ -145,7 +126,7 @@
         <div class="container-fluid">
             <div class="row visible-on">
 
-                    <div class="col-lg-12 text-center about-us-image-desktop visible-lg">
+                    <div class="col-lg-12 text-center about-us-image-desktop-fixed">
                         <button type="button" class="btn btn-primary btn-xl" data-toggle="modal" data-target="#myModal" style="margin-top: 160px;">About Us</button>
 
                             <!-- Modal -->
@@ -156,10 +137,35 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">About Us</h4>
+                                            <h4 class="modal-title">
+                                                <?php                    
+                                                    if (isItalian())
+                                                    { 
+                                                      echo "La Società";
+                                                    }
+                                                    else
+                                                    {
+                                                        echo "About Us";
+                                                    }
+                                                ?>
+                                            </h4>
                                         </div>
                                     <div class="modal-body">
-                                        <p>Ocagiuliva is a non-profit organization, founded  in 2002, from the idea of some friends who wanted to create a new company to compete for the historical carnival competition of San Giovanni in Persiceto.(Bologna), namely spillo in italian. With modest means but  with forward-looking projects and ideas, all the members joined forces and expertise, spending time and money to climb for success.<br> 
+                                    <?php                    
+                                        if (isItalian())
+                                        { 
+                                            echo "<p>Ocagiuliva è un’associazione no-profit nata nel 2002, dall’idea di alcuni amici, con l’intento di costituire una nuova compagnia da far gareggiare alla sfilata degli spilli, storica manifestazione carnevalesca del pase di San Giovanni in Persiceto (BO). Con mezzi modesti ma idee e progetti lungimiranti, i soci hanno messo a fattor comune le proprie maestranze, il proprio tempo e le proprie finanze per sostenere la causa.<br>
+La sfida iniziale di farsi conoscere ed apprezzare dal pubblico e di farsi temere dagli avversari è stata affrontata con passione, coraggio, impegno e con spirito goliardico e d’avventura.  Ed è stata vinta.<br>
+Dall’anno della costituzione, tutte le competizioni hanno visto l’Ocagiuliva gareggiare e quasi sempre trionfare sul podio.
+Nel tempo i soci carnevalai hanno affinato le scelte stilistiche e le tecniche pittoriche, architettoniche e ingegneristiche per realizzare elementi artistici sempre più sofisticati e trasformazioni scenografiche ancor più spettacolari. Il risultato finale è quello tipico del carnevale di San Giovanni in Persiceto: la creazione di macchine sceniche che mutano il proprio aspetto durante la rappresentazione e si trasformano attraverso dei congegni meccanici.<br>
+Nel luglio 2015 le opere della società vengono apprezzate da un artista di fama internazionale, Mika! E così, la macchina scenica creata dall’Ocagiuliva riesce finanche a volare, via dalla piazza di un piccolo paese verso palchi internazionali.<br>
+Da allora, immutato lo spirito carnevalesco e la voglia di competere, l’associazione mette la propria specialità al servizio dello spettacolo in genere, e realizza macchine sceniche per gli spettacoli e per parchi tematici. <br>
+Peculiarità delle scenografie “Giulive” è proprio la trasformazione spettacolare degli elementi scenici.  <br>
+Ingrediente fondamentale per la riuscita di scenografie d’effetto e di trasformazioni sorprendenti è la filosofia che anima da sempre i soci dell’Ocagiuliva: la creatività è divinità, il sogno è realtà, l’immaginazione è profezia, la magia esiste, l’arte è vita.<b>Lo spettacolo è… Ocagiuliva</b>.</p>";
+                                        }
+                                        else
+                                        {
+                                            echo "<p>Ocagiuliva is a non-profit organization, founded  in 2002, from the idea of some friends who wanted to create a new company to compete for the historical carnival competition of San Giovanni in Persiceto.(Bologna), namely spillo in italian. With modest means but  with forward-looking projects and ideas, all the members joined forces and expertise, spending time and money to climb for success.<br> 
 The first challenge was to create something that people would get to known and appreciate, and also to create a truly competitive team, able to withstand the  high-quality array of teams in the town. Both challenges have been awarded with success through courage and passion. <br>
 From the first year, Ocagiuliva collected quite high ranking positions, usually bringing triumph at the podioum.<br>
 Over the years, Ocagiuliva members refined their painting technique, as well as their architectural and engineering ones, becoming more inventive, searching  for more sophisticated  and spectacular scenic transformations.<br>
@@ -168,44 +174,13 @@ In July 2015, the works of Ocagiuliva received the attentions of the internation
 The machine built by Ocagiuliva actually managed to fly from the streets of a little town, to the most important international stages like Paris, Rome, Amsterdam and more...<br>
 Since then, Ocagiuilva however, mantaining the same carnival spirit of the beginning, has been using its growing and strengthened experience in the service of general entertainment. Giulive creations are peculiar specifically for their surprising transformations of its scenic elements.<br>
 Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves every single project: creativity is  divine, dream is reality, imagination is prophecy, magic exists, art is life.<br>
-<b>The show... is Ocagiuliva</b>.</p>
+<b>The show... is Ocagiuliva</b>.</p>";
+                                        }
+                                    ?>
                                     </div>
-                                    <!--div class="modal-footer">
+                                    <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div-->
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-
-                    <div class="col-lg-12 text-center about-us-image-mobile hidden-lg">
-                        <button type="button" class="btn btn-primary btn-xl" data-toggle="modal" data-target="#myModal" style="margin-top: 160px;">About Us</button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="myModal" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">About Us</h4>
-                                        </div>
-                                    <div class="modal-body">
-                                        <p>Ocagiuliva is a non-profit organization, founded  in 2002, from the idea of some friends who wanted to create a new company to compete for the historical carnival competition of San Giovanni in Persiceto.(Bologna), namely spillo in italian. With modest means but  with forward-looking projects and ideas, all the members joined forces and expertise, spending time and money to climb for success.<br> 
-The first challenge was to create something that people would get to known and appreciate, and also to create a truly competitive team, able to withstand the  high-quality array of teams in the town. Both challenges have been awarded with success through courage and passion. <br>
-From the first year, Ocagiuliva collected quite high ranking positions, usually bringing triumph at the podioum.<br>
-Over the years, Ocagiuliva members refined their painting technique, as well as their architectural and engineering ones, becoming more inventive, searching  for more sophisticated  and spectacular scenic transformations.<br>
-<br>
-In July 2015, the works of Ocagiuliva received the attentions of the international famed artist Mika. So they started a collaboration with him to prepare a part of the scenography for his world tour. <br>
-The machine built by Ocagiuliva actually managed to fly from the streets of a little town, to the most important international stages like Paris, Rome, Amsterdam and more...<br>
-Since then, Ocagiuilva however, mantaining the same carnival spirit of the beginning, has been using its growing and strengthened experience in the service of general entertainment. Giulive creations are peculiar specifically for their surprising transformations of its scenic elements.<br>
-Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves every single project: creativity is  divine, dream is reality, imagination is prophecy, magic exists, art is life.<br>
-<b>The show... is Ocagiuliva</b>.</p>
                                     </div>
-                                    <!--div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div-->
                                 </div>
                             </div>
                           </div>
@@ -226,7 +201,7 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
                                     2015
                                 </div>
                                 <div class="project-name">
-                                    ...
+                                    <?php echo getTitleForYear("2015"); ?>
                                 </div>
                             </div>
                         </div>
@@ -241,7 +216,7 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
                                     2014
                                 </div>
                                 <div class="project-name">
-                                    ...
+                                    <?php echo getTitleForYear("2014"); ?>
                                 </div>
                             </div>
                         </div>
@@ -256,7 +231,7 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
                                     2013
                                 </div>
                                 <div class="project-name">
-                                    ...
+                                    <?php echo getTitleForYear("2013"); ?>
                                 </div>
                             </div>
                         </div>
@@ -271,7 +246,7 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
                                     2012
                                 </div>
                                 <div class="project-name">
-                                    ...
+                                    <?php echo getTitleForYear("2012"); ?>
                                 </div>
                             </div>
                         </div>
@@ -286,7 +261,7 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
                                     2011
                                 </div>
                                 <div class="project-name">
-                                    ...
+                                    <?php echo getTitleForYear("2011"); ?>
                                 </div>
                             </div>
                         </div>
@@ -301,7 +276,7 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
                                     2010
                                 </div>
                                 <div class="project-name">
-                                    ...
+                                    <?php echo getTitleForYear("2010"); ?>
                                 </div>
                             </div>
                         </div>
@@ -317,7 +292,7 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
                                     2009
                                 </div>
                                 <div class="project-name">
-                                    ...
+                                    <?php echo getTitleForYear("2009"); ?>
                                 </div>
                             </div>
                         </div>
@@ -333,7 +308,7 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
                                     2008
                                 </div>
                                 <div class="project-name">
-                                    ...
+                                    <?php echo getTitleForYear("2008"); ?>
                                 </div>
                             </div>
                         </div>
@@ -349,7 +324,7 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
                                     2007
                                 </div>
                                 <div class="project-name">
-                                    ...
+                                    <?php echo getTitleForYear("2007"); ?>
                                 </div>
                             </div>
                         </div>
@@ -365,7 +340,7 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
                                     2006
                                 </div>
                                 <div class="project-name">
-                                    ...
+                                    <?php echo getTitleForYear("2006"); ?>
                                 </div>
                             </div>
                         </div>
@@ -381,7 +356,7 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
                                     2005
                                 </div>
                                 <div class="project-name">
-                                    ...
+                                    <?php echo getTitleForYear("2005"); ?>
                                 </div>
                             </div>
                         </div>
@@ -397,7 +372,7 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
                                     2004
                                 </div>
                                 <div class="project-name">
-                                    ...
+                                    <?php echo getTitleForYear("2004"); ?>
                                 </div>
                             </div>
                         </div>

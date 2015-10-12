@@ -36,6 +36,16 @@
 }
 */
 
+.about-us-image-desktop-fixed{
+    background: url('/img/AboutUsBackground-landscape.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: 10%;    
+    min-height: 350px;    
+}
+
 .about-us-image-desktop{
     background: url('/img/AboutUsBackground-landscape.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
