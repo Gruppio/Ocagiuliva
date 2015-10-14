@@ -1,5 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<?php 
+    include_once './php/Localize.php';
+    include_once './php/DescriptionManager.php';
+?>
+
+<?php                    
+    if (isItalian())
+    { 
+        echo "<html lang=\"it\">";
+    }
+    else
+    {
+        echo "<html lang=\"en\">";
+    }
+?>
+
 
 <head>
 
@@ -51,11 +67,7 @@
 
 </script>
     
-    <?php 
-        include_once './php/Localize.php';
-        include_once './php/DescriptionManager.php';
-    ?>
-
+    
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -192,193 +204,27 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
     <section class="no-padding" id="carnival" style="padding-top:100px">
         <div class="container-fluid">
             <div class="row no-gutter">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/FotoSpilli/2015.jpg" class="img-responsive" alt="#">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2015
+                <?php
+                for($year = 2015; $year >= 2004; $year--)
+                {
+                    $title = getTitleForYear("$year");
+                    echo "<div class=\"col-lg-4 col-sm-6\">
+                    <a href=\"gallery.php?year=$year\" class=\"portfolio-box\">
+                        <img src=\"img/FotoSpilli/$year.jpg\" class=\"img-responsive\" alt=\"gallery.php?year=$year\">
+                        <div class=\"portfolio-box-caption\">
+                            <div class=\"portfolio-box-caption-content\">
+                                <div class=\"project-category text-faded\">
+                                    $year
                                 </div>
-                                <div class="project-name">
-                                    <?php echo getTitleForYear("2015"); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/FotoSpilli/2014.jpg" class="img-responsive" alt="#">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2014
-                                </div>
-                                <div class="project-name">
-                                    <?php echo getTitleForYear("2014"); ?>
+                                <div class=\"project-name\">
+                                    $title
                                 </div>
                             </div>
                         </div>
                     </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/FotoSpilli/2013.jpg" class="img-responsive" alt="#">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2013
-                                </div>
-                                <div class="project-name">
-                                    <?php echo getTitleForYear("2013"); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/FotoSpilli/2012.jpg" class="img-responsive" alt="#">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2012
-                                </div>
-                                <div class="project-name">
-                                    <?php echo getTitleForYear("2012"); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/FotoSpilli/2011.jpg" class="img-responsive" alt="#">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2011
-                                </div>
-                                <div class="project-name">
-                                    <?php echo getTitleForYear("2011"); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/FotoSpilli/2010.jpg" class="img-responsive" alt="#">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2010
-                                </div>
-                                <div class="project-name">
-                                    <?php echo getTitleForYear("2010"); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/FotoSpilli/2009.jpg" class="img-responsive" alt="#">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2009
-                                </div>
-                                <div class="project-name">
-                                    <?php echo getTitleForYear("2009"); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/FotoSpilli/2008.jpg" class="img-responsive" alt="#">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2008
-                                </div>
-                                <div class="project-name">
-                                    <?php echo getTitleForYear("2008"); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/FotoSpilli/2007.jpg" class="img-responsive" alt="#">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2007
-                                </div>
-                                <div class="project-name">
-                                    <?php echo getTitleForYear("2007"); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/FotoSpilli/2006.jpg" class="img-responsive" alt="#">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2006
-                                </div>
-                                <div class="project-name">
-                                    <?php echo getTitleForYear("2006"); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/FotoSpilli/2005.jpg" class="img-responsive" alt="#">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2005
-                                </div>
-                                <div class="project-name">
-                                    <?php echo getTitleForYear("2005"); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/FotoSpilli/2004.jpg" class="img-responsive" alt="#">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    2004
-                                </div>
-                                <div class="project-name">
-                                    <?php echo getTitleForYear("2004"); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
+                </div>";
+                }
+                ?>
             </div>
         </div>
     </section>
