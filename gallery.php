@@ -17,8 +17,10 @@
 ?>
 
 <?php
-    $year = $_GET["year"];
-    $title = getTitleForYear($year);
+    $year           = $_GET["year"];
+    $title          = getTitleForYear($year);
+    $description    = getDescriptionForYear($year);
+    $video          = getVideoForYear($year);
 ?>
 
 
@@ -94,8 +96,15 @@
             <div class="container">
               <div class="row">
                 <h1><?php echo $title ?></h1>
-
+                  <p style="padding-top:20px"><?php echo $description ?></p>
                   <?php
+        
+                    // Video
+                    if ($video != "")
+                    {   
+                        echo "<div class=\"col-lg-12\" style=\"padding-top:20px;padding-bottom:20px\"><div class=\"embed-responsive embed-responsive-16by9\"><iframe class=\"embed-responsive-item\" src=\"$video?autoplay=0&controls=1&showinfo=0&loop=1&rel=0&modestbranding=1\"></iframe></div></div>";
+        //echo "<div class=\"col-lg-12\"><iframe width=\"560\" height=\"315\" src=\"$video?autoplay=0&controls=1&showinfo=0&loop=1&rel=0&modestbranding=1\" frameborder=\"0\" allowfullscreen></iframe></div>";
+                    }
 
                     for ($i = 0; $i < 10; $i ++)
                     {
