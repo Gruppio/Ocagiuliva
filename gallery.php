@@ -5,8 +5,16 @@
     include_once './php/DescriptionManager.php';
 ?>
 
+<?php
+    $year           = $_GET["year"];
+    $italian        = isItalian();
+    $title          = getTitleForYear($year, $italian);
+    $description    = getDescriptionForYear($year, $italian);
+    $video          = getVideoForYear($year);  
+?>
+
 <?php                    
-    if (isItalian())
+    if ($italian)
     { 
         echo "<html lang=\"it\">";
     }
@@ -16,12 +24,7 @@
     }
 ?>
 
-<?php
-    $year           = $_GET["year"];
-    $title          = getTitleForYear($year);
-    $description    = getDescriptionForYear($year);
-    $video          = getVideoForYear($year);
-?>
+
 
 
 <head>
@@ -106,10 +109,22 @@
         //echo "<div class=\"col-lg-12\"><iframe width=\"560\" height=\"315\" src=\"$video?autoplay=0&controls=1&showinfo=0&loop=1&rel=0&modestbranding=1\" frameborder=\"0\" allowfullscreen></iframe></div>";
                     }
 
+                    if ($handle = opendir("./img/FotoSpilli600x350/$year")) 
+                    {
+                        while (false !== ($entry = readdir($handle))) 
+                        {
+                            if ($entry != "." && $entry != "..") 
+                            {
+                                echo "<div class=\"col-lg-3 col-sm-4 col-xs-12\"><a title=\"$title\" href=\"#\"><img class=\"thumbnail img-responsive\" src=\"/img/FotoSpilli600x350/$year/$entry\"></a></div>";
+                            }
+                        }
+                        closedir($handle);
+                    }
+                    /*
                     for ($i = 0; $i < 10; $i ++)
                     {
                         echo "<div class=\"col-lg-3 col-sm-4 col-xs-12\"><a title=\"$title\" href=\"#\"><img class=\"thumbnail img-responsive\" src=\"//placehold.it/600x350\"></a></div>";
-                    }
+                    }*/
                     ?>
                 <hr>
 

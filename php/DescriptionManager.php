@@ -1,17 +1,15 @@
 <?php
 
-include_once 'Localize.php';
-
 function getVideoForYear($year)
 {
     if ($year == "2015")
     {
-        return "https://www.youtube.com/embed/9-d08TXTkyA";
+        return "https://www.youtube.com/embed/b3urvLgQPdQ";
     }
 
     if ($year == "2014")
     {
-        return "";
+        return "https://www.youtube.com/embed/wuLOf0P7wRI";
     }
 
     if ($year == "2013")
@@ -21,17 +19,17 @@ function getVideoForYear($year)
 
     if ($year == "2012")
     {
-        return "";
+        return "https://www.youtube.com/embed/vEsO8DfNvkc";
     }
 
     if ($year == "2011")
     {
-        return "";
+        return "https://www.youtube.com/embed/mKqw3nMD-Y4";
     }
 
     if ($year == "2010")
     {
-        return "";
+        return "https://www.youtube.com/embed/QEVeAHljVew";
     }
 
     if ($year == "2009")
@@ -65,9 +63,9 @@ function getVideoForYear($year)
     return "";
 }
 
-function getTitleForYear($year)
+function getTitleForYear($year, $italian)
 {
-    if (isItalian())
+    if ($italian)
     {
         if ($year == "2015")
         {
@@ -193,9 +191,9 @@ function getTitleForYear($year)
 }
 
 
-function getDescriptionForYear($year)
+function getDescriptionForYear($year, $italian)
 {
-    if (isItalian())
+    if ($italian)
     {
         if ($year == "2015")
         {

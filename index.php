@@ -5,8 +5,12 @@
     include_once './php/DescriptionManager.php';
 ?>
 
+<?php
+    $italian = isItalian();
+?>
+
 <?php                    
-    if (isItalian())
+    if ($italian)
     { 
         echo "<html lang=\"it\">";
     }
@@ -89,7 +93,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <?php                    
-                        if (isItalian())
+                        if ($italian)
                         { 
                             echo "<li><a class=\"page-scroll\" href=\"#home\">Home</a></li>";
                             echo "<li><a class=\"page-scroll\" href=\"#about\">La Società</a></li>";
@@ -151,7 +155,7 @@
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             <h4 class="modal-title">
                                                 <?php                    
-                                                    if (isItalian())
+                                                    if ($italian)
                                                     { 
                                                       echo "La Società";
                                                     }
@@ -164,7 +168,7 @@
                                         </div>
                                     <div class="modal-body">
                                     <?php                    
-                                        if (isItalian())
+                                        if ($italian)
                                         { 
                                             echo "<p>Ocagiuliva è un’associazione no-profit nata nel 2002, dall’idea di alcuni amici, con l’intento di costituire una nuova compagnia da far gareggiare alla sfilata degli spilli, storica manifestazione carnevalesca del pase di San Giovanni in Persiceto (BO). Con mezzi modesti ma idee e progetti lungimiranti, i soci hanno messo a fattor comune le proprie maestranze, il proprio tempo e le proprie finanze per sostenere la causa.<br>
 La sfida iniziale di farsi conoscere ed apprezzare dal pubblico e di farsi temere dagli avversari è stata affrontata con passione, coraggio, impegno e con spirito goliardico e d’avventura.  Ed è stata vinta.<br>
@@ -207,7 +211,7 @@ Basic ingredient for such work, is always Ocagiuliva’s filosophy, that moves e
                 <?php
                 for($year = 2015; $year >= 2004; $year--)
                 {
-                    $title = getTitleForYear("$year");
+                    $title = getTitleForYear("$year", $italian);
                     echo "<div class=\"col-lg-4 col-sm-6\">
                     <a href=\"gallery.php?year=$year\" class=\"portfolio-box\">
                         <img src=\"img/FotoSpilli/$year.jpg\" class=\"img-responsive\" alt=\"gallery.php?year=$year\">
