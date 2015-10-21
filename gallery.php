@@ -115,7 +115,7 @@
                         {
                             if ($entry != "." && $entry != "..") 
                             {
-                                echo "<div class=\"col-lg-3 col-sm-4 col-xs-12\"><a title=\"$title\" href=\"#\"><img class=\"thumbnail img-responsive\" src=\"/img/FotoSpilli600x350/$year/$entry\"></a></div>";
+                                echo "<div class=\"col-lg-3 col-sm-4 col-xs-12\"><a title=\"$title\" href=\"#\"><img class=\"thumbnail img-responsive\" src=\"img/FotoSpilli600x350/$year/$entry\"></a></div>";
                             }
                         }
                         closedir($handle);
